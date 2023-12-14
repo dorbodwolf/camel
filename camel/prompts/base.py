@@ -110,7 +110,7 @@ class TextPrompt(str):
         r"""Returns a set of strings representing the keywords in the prompt.
         """
         from camel.utils import get_prompt_template_key_words
-        return get_prompt_template_key_words(self)
+        return get_prompt_template_key_words(self) # 正则表达式匹配prompt文本中花括号{}内的关键词，以Set类型去重返回匹配结果
 
     def format(self, *args: Any, **kwargs: Any) -> 'TextPrompt':
         r"""Overrides the built-in :obj:`str.format` method to allow for
